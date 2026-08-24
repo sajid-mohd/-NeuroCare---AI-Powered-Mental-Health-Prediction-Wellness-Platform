@@ -335,7 +335,7 @@ If you use this project in academic research, please cite:
 title={NeuroCare: AI-Powered Mental Health Prediction & Wellness Platform},
 author={Sajid},
 year={2025-26},
-url={https://github.com/sajid-mohd/mental-health-prediction-ai},
+url={https://github.com/sajid-mohd/-NeuroCare---AI-Powered-Mental-Health-Prediction-Wellness-Platform},
 version={1.0}
 }
 
