@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        {% if error %}
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="alert alert-danger shadow">
+                        <h4 class="alert-heading">Error</h4>
+                        <p>{{ error }}</p>
+                        <hr>
+                        <a href="{{ url_for('prediction') }}" class="btn btn-primary">Try Again</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <!-- Results Header -->
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="result-header">
+                        {% if treatment_needed == "Yes" %}
+                            <i class="bi bi-exclamation-triangle-fill text-warning display-1 mb-3"></i>
+                            <h2 class="display-5 fw-bold text-warning">Treatment Recommended</h2>
+                            <p class="lead">Our analysis suggests you may benefit from professional mental health support.</p>
+                        {% else %}
+                            <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
+                            <h2 class="display-5 fw-bold text-success">Low Risk Assessment</h2>
+                            <p class="lead">Your assessment indicates good mental health status with low risk factors.</p>
+                        {% endif %}
+                        <div class="confidence-badge">
+                            <span class="badge bg-primary fs-6">Confidence: {{ "%.1f"|format(confidence * 100) }}%</span>
+                            <span class="badge bg-secondary fs-6">Model: {{ model_name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="chart-card">
+                        <h5 class="card-title text-center">Prediction Confidence</h5>
+                        <div class="chart-container">
+                            {{ gauge_chart|safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="chart-card">
+                        <h5 class="card-title text-center">Risk Factor Analysis</h5>
+                        <div class="chart-container">
+                            {{ bar_chart|safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="chart-card">
+                        <h5 class="card-title text-center">Treatment Recommendation</h5>
+                        <div class="chart-container">
+                            {{ pie_chart|safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Factors Summary -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="risk-summary-card">
+                        <h4 class="fw-bold mb-4">
+                            <i class="bi bi-clipboard-data me-2"></i>Risk Factor Summary
+                        </h4>
+                        <div class="row g-3">
+                            {% for factor, score in risk_factors.items() %}
+                            <div class="col-md-6 col-lg-3">
+                                <div class="risk-item">
+                                    <div class="risk-header">
+                                        <span class="risk-name">{{ factor }}</span>
+                                        <span class="risk-score 
+                                            {% if score > 70 %}text-danger
+                                            {% elif score > 40 %}text-warning
+                                            {% else %}text-success{% endif %}">
+                                            {{ score }}%
+                                        </span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar 
+                                            {% if score > 70 %}bg-danger
+                                            {% elif score > 40 %}bg-warning
+                                            {% else %}bg-success{% endif %}"
+                                            style="width: {{ score }}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Suggestions -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="suggestions-card">
+                        <h4 class="fw-bold mb-4">
+                            <i class="bi bi-lightbulb me-2"></i>Personalized Recommendations
+                        </h4>
+                        <div class="row g-4">
+                            {% for suggestion in suggestions %}
+                            <div class="col-md-6">
+                                <div class="suggestion-item">
+                                    <div class="suggestion-content">
+                                        {{ suggestion|safe }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="action-buttons">
+                        <a href="{{ url_for('prediction') }}" class="btn btn-outline-primary btn-lg me-3">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Take Another Assessment
+                        </a>
+                        <a href="{{ url_for('resources') }}" class="btn btn-primary btn-lg">
+                            <i class="bi bi-book me-2"></i>View Resources
+                        </a>
+                    </div>
+                    <p class="text-muted mt-4">
+                        <i class="bi bi-info-circle me-1"></i>
+                        This assessment is for informational purposes only and does not replace professional medical advice.
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

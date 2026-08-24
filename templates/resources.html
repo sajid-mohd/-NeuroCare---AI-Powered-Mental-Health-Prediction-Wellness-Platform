@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Mental Health Resources</h2>
+                <p class="lead text-muted">Access professional support, emergency contacts, and helpful resources for your mental health journey.</p>
+            </div>
+        </div>
+
+        <!-- Emergency Contacts -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="emergency-section">
+                    <div class="emergency-header">
+                        <h3 class="fw-bold text-danger">
+                            <i class="bi bi-telephone-fill me-2"></i>Emergency Support
+                        </h3>
+                        <p class="text-muted">If you're experiencing a mental health crisis, please reach out immediately:</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="emergency-card">
+                                <h5 class="fw-bold">India - National Helplines</h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>Kiran 24x7:</strong> 1800-599-0019</li>
+                                    <li><strong>AASRA:</strong> +91-22-2754-6669</li>
+                                    <li><strong>Sneha India:</strong> +91-44-2464-0050</li>
+                                    <li><strong>Vandrevala Foundation:</strong> 1860-266-2345</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="emergency-card">
+                                <h5 class="fw-bold">International Crisis Lines</h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>USA:</strong> 988 (Suicide & Crisis Lifeline)</li>
+                                    <li><strong>UK:</strong> 116 123 (Samaritans)</li>
+                                    <li><strong>Australia:</strong> 13 11 14 (Lifeline)</li>
+                                    <li><strong>Canada:</strong> 1-833-456-4566</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Support -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h3 class="fw-bold mb-4">
+                    <i class="bi bi-person-check me-2"></i>Professional Support Options
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="bi bi-hospital"></i>
+                            </div>
+                            <h5 class="fw-bold">Psychiatrists</h5>
+                            <p class="text-muted">Medical doctors who specialize in mental health and can prescribe medication.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="bi bi-chat-heart"></i>
+                            </div>
+                            <h5 class="fw-bold">Psychologists</h5>
+                            <p class="text-muted">Licensed professionals who provide therapy and counseling services.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h5 class="fw-bold">Support Groups</h5>
+                            <p class="text-muted">Connect with others who share similar experiences and challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self-Help Resources -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="fw-bold mb-4">
+                    <i class="bi bi-heart me-2"></i>Self-Help & Wellness
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="wellness-card">
+                            <h5 class="fw-bold">Mindfulness & Meditation</h5>
+                            <ul class="list-unstyled">
+                                <li>• Daily meditation practice (10-20 minutes)</li>
+                                <li>• Deep breathing exercises</li>
+                                <li>• Progressive muscle relaxation</li>
+                                <li>• Mindful walking and eating</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wellness-card">
+                            <h5 class="fw-bold">Lifestyle Changes</h5>
+                            <ul class="list-unstyled">
+                                <li>• Regular physical exercise (30 min/day)</li>
+                                <li>• Adequate sleep (7-9 hours/night)</li>
+                                <li>• Balanced nutrition</li>
+                                <li>• Social connection and support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

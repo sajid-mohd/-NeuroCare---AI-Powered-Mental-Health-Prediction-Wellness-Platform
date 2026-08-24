@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="prediction-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="assessment-card">
+                    <div class="card-header text-center">
+                        <h2 class="fw-bold mb-3">Mental Health Assessment</h2>
+                        <p class="text-muted">Please answer all questions honestly. This assessment is confidential and will help us provide you with personalized insights.</p>
+                    </div>
+                    
+                    <form method="POST" action="{{ url_for('predict') }}" id="assessmentForm">
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Personal Information -->
+                                <div class="col-12">
+                                    <h5 class="section-title"><i class="bi bi-person me-2"></i>Personal Information</h5>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Gender</label>
+                                    <select name="Gender" class="form-select" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Country</label>
+                                    <input type="text" name="Country" class="form-control" placeholder="e.g., India" required>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Occupation</label>
+                                    <input type="text" name="Occupation" class="form-control" placeholder="e.g., Software Engineer" required>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Are you self-employed?</label>
+                                    <select name="self_employed" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Mental Health History -->
+                                <div class="col-12 mt-4">
+                                    <h5 class="section-title"><i class="bi bi-clock-history me-2"></i>Mental Health History</h5>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Family history of mental health conditions?</label>
+                                    <select name="family_history" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Have you sought treatment for mental health?</label>
+                                    <select name="treatment" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Personal mental health history?</label>
+                                    <select name="Mental_Health_History" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Current Symptoms -->
+                                <div class="col-12 mt-4">
+                                    <h5 class="section-title"><i class="bi bi-heart-pulse me-2"></i>Current Symptoms & Behaviors</h5>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Days spent indoors recently?</label>
+                                    <select name="Days_Indoors" class="form-select" required>
+                                        <option value="">Select Range</option>
+                                        <option value="1-14 days">1-14 days</option>
+                                        <option value="15-30 days">15-30 days</option>
+                                        <option value="More than a month">More than a month</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Experiencing growing stress?</label>
+                                    <select name="Growing_Stress" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Changes in daily habits?</label>
+                                    <select name="Changes_Habits" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Mood swings frequency?</label>
+                                    <select name="Mood_Swings" class="form-select" required>
+                                        <option value="">Select Frequency</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Struggling with coping mechanisms?</label>
+                                    <select name="Coping_Struggles" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Interest in work activities?</label>
+                                    <select name="Work_Interest" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Social weakness or isolation?</label>
+                                    <select name="Social_Weakness" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Support & Resources -->
+                                <div class="col-12 mt-4">
+                                    <h5 class="section-title"><i class="bi bi-people me-2"></i>Support & Resources</h5>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Comfortable with mental health interviews?</label>
+                                    <select name="mental_health_interview" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        <option value="Maybe">Maybe</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Aware of care options available?</label>
+                                    <select name="care_options" class="form-select" required>
+                                        <option value="">Select Option</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        <option value="Not sure">Not sure</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="bi bi-graph-up-arrow me-2"></i>Get My Assessment
+                            </button>
+                            <p class="text-muted mt-3 mb-0">
+                                <i class="bi bi-shield-check me-1"></i>
+                                Your responses are completely confidential and secure
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
