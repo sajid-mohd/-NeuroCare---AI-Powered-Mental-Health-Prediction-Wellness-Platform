@@ -8,7 +8,7 @@
 
 A cutting-edge AI-powered mental health screening and analysis platform that leverages advanced machine learning algorithms to provide personalized mental health insights and recommendations.
 
-![MindCare Banner](docs/images/mindcare-banner.png)
+![NeuroCare Banner](docs/images/mindcare-banner.png)
 
 ## 🌟 Features
 
