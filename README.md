@@ -1,4 +1,4 @@
-# 🧠 NeuroCare - AI-Powered Mental Health Prediction & Wellness Platform
+**# 🧠 NeuroCare - AI-Powered Mental Health Prediction & Wellness Platform
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com/)
@@ -297,38 +297,10 @@ git push origin feature/amazing-feature
 - **Human Oversight**: Professional review of recommendations
 - **Continuous Monitoring**: Regular model performance evaluation
 
-## 📞 Support & Resources
-
-### Emergency Contacts
-- **India**: 
-- Khalid 24x7: 1800-599-0019
-- AASRA: +91-22-2754-6669
-- **International**: Contact your local emergency services
-
 ### Professional Help
 - **Find Therapists**: [Psychology Today](https://www.psychologytoday.com)
 - **Crisis Support**: [Crisis Text Line](https://www.crisistextline.org)
 - **Mental Health Resources**: [NAMI](https://www.nami.org)
-
-## 📈 Roadmap
-
-### Version 2.0 (Q3 2024)
-- [ ] Mobile app development
-- [ ] Integration with wearable devices
-- [ ] Multilingual support (Hindi, Tamil, Bengali)
-- [ ] Advanced NLP for text analysis
-
-### Version 2.1 (Q4 2024)
-- [ ] Chatbot integration
-- [ ] Peer support community
-- [ ] Professional practitioner portal
-- [ ] Advanced reporting dashboard
-
-### Version 3.0 (2025)
-- [ ] AI-powered therapy recommendations
-- [ ] Integration with healthcare systems
-- [ ] Predictive mental health modeling
-- [ ] Research collaboration platform
 
 ## 📄 License
 
@@ -361,10 +333,11 @@ If you use this project in academic research, please cite:
 
 @software{NeuroCare2025,
 title={NeuroCare: AI-Powered Mental Health Prediction & Wellness Platform},
-author={Sajid, Inthiqhab, Abdullah, Inayat},
+author={Sajid},
 year={2025-26},
-url={https://github.com/yourusername/mindcare},
+url={https://github.com/sajid-mohd/mental-health-prediction-ai},
 version={1.0}
 }
 
 
+**
